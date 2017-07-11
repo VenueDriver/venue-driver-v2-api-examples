@@ -3,7 +3,7 @@ require 'httparty'
 require 'json'
 
 # Call this with the API URL, username, and password:
-# ruby examples/list_venues.rb http://api.example.com/v1/ user pass
+# ruby examples/list_accounts.rb http://api.example.com/v1/ user pass
 
 api_base_URL = ARGV[0] # http://api.example.comv1/
 
