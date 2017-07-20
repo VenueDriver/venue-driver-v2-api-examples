@@ -16,7 +16,7 @@ puts "API response" +
 puts "Authorization token: " + (token = JSON.parse(response.body)['token'])
 
 puts "Accounts API resource URL:" +
-  (uri = URI.join(api_base_URL, 'accounts')).to_s
+  (uri = URI.join(api_base_URL, 'public/accounts')).to_s
 response = HTTParty.get(uri,
   :headers => {'Authorization' => token})
 puts "API response: " +
