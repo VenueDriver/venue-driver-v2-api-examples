@@ -16,7 +16,7 @@ puts "API response" +
 puts "Authorization token: " + (token = JSON.parse(response.body)['token'])
 
 puts "Events API resource URL:" +
-  (uri = URI.join(api_base_URL, 'events')).to_s
+  (uri = URI.join(api_base_URL, 'public/events')).to_s
 response = HTTParty.get(uri,
   :headers => {'Authorization' => token},
   :query => {'venue_id' => ARGV[3]})
