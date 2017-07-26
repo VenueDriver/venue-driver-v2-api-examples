@@ -3,9 +3,9 @@ require 'httparty'
 require 'json'
 
 # Call this with the API URL, username, password and account_id:
-# ruby examples/list_venues.rb http://api.example.com/v1/ user pass 1234
+# ruby examples/list_venues.rb http://api.example.com/v2/ user pass 1234
 
-api_base_URL = ARGV[0] # http://api.example.comv1/
+api_base_URL = ARGV[0] # http://api.example.com/v2/
 
 query = {}
 query[:account_id] = ARGV[1] if ARGV[1]

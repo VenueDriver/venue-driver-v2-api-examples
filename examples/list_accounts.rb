@@ -3,9 +3,9 @@ require 'httparty'
 require 'json'
 
 # Call this with the API URL, username, and password:
-# ruby examples/list_accounts.rb http://api.example.com/v1/ user pass
+# ruby examples/list_accounts.rb http://api.example.com/v2/ user pass
 
-api_base_URL = ARGV[0] # http://api.example.com/v1/
+api_base_URL = ARGV[0] # http://api.example.com/v2/
 
 puts "Authentication API resource URL: " +
   (uri = URI.join(api_base_URL, 'auth')).to_s

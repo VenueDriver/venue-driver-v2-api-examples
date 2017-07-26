@@ -3,9 +3,9 @@ require 'httparty'
 require 'json'
 
 # Call this with the API URL, username, password, account_id and start_date:
-# ruby examples/list_events.rb http://api.example.com/v1/ user pass 1234 "2017-07-25T23:02:16+00:00"
+# ruby examples/list_reservations.rb http://api.example.com/v2/ user pass 1234 "2017-07-25T23:02:16+00:00"
 
-api_base_URL = ARGV[0] # http://api.example.comv1/
+api_base_URL = ARGV[0] # http://api.example.com/v2/
 
 puts "Authentication API resource URL: " +
   (uri = URI.join(api_base_URL, 'auth')).to_s
@@ -15,7 +15,7 @@ puts "API response" +
   response.body, response.code, response.message, response.headers.inspect
 puts "Authorization token: " + (token = JSON.parse(response.body)['token'])
 
-puts "Events API resource URL:" +
+puts "Reservations API resource URL:" +
   (uri = URI.join(api_base_URL, 'public/reservations')).to_s
 response = HTTParty.get(uri,
     headers: {'Authorization' => token},
