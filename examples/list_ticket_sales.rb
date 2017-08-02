@@ -20,8 +20,8 @@ puts "API response" +
   response.body, response.code, response.message, response.headers.inspect
 puts "Authorization token: " + (token = JSON.parse(response.body)['token'])
 
-puts "Reservations API resource URL:" +
-  (uri = URI.join(api_base_URL, 'reservations')).to_s
+puts "Ticket sales API resource URL:" +
+  (uri = URI.join(api_base_URL, 'ticket_sales')).to_s
 response = HTTParty.get(uri,
     headers: {'Authorization' => token},
     query: {
