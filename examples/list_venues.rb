@@ -2,14 +2,14 @@
 require 'httparty'
 require 'json'
 
-# Call this with the API URL, username, password and account_id:
-# ruby examples/list_venues.rb http://api.example.com/v2/ user pass 1234
+configuration = YAML.load_file("configuration.yml")
 
-api_base_URL = ARGV[0] # http://api.example.com/v2/
+# http://api.example.com/v2/
+api_base_URL = configuration['api_base_url']
 
 query = {}
-query[:account_id] = ARGV[1] if ARGV[1]
-query[:updated_after] = ARGV[2] if ARGV[2]
+query[:account_id] = configuration['account_id']
+query[:updated_after] = configuration['updated_after']
 
 puts "Venues API resource URL:" +
   (uri = URI.join(api_base_URL, 'public/venues')).to_s

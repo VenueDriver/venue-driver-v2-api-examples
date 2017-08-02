@@ -2,17 +2,12 @@
 require 'httparty'
 require 'json'
 
-# Call this with the API URL, username, and password:
-# ruby examples/list_artists.rb http://api.example.com/v2/ user pass
+configuration = YAML.load_file("configuration.yml")
 
-api_base_URL = ARGV[0] # http://api.example.com/v2/
+# http://api.example.com/v2/
+api_base_URL = configuration['api_base_url']
 
-options =
-  if(ARGV[1])
-    {query: {updated_after: ARGV[1]}}
-  else
-    {}
-  end
+options = {query: {updated_after: configuration['updated_after']}}
 
 puts "Artists API resource URL:" +
   (uri = URI.join(api_base_URL, 'public/artists')).to_s

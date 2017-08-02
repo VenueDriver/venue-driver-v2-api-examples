@@ -4,9 +4,6 @@ require 'json'
 
 configuration = YAML.load_file("configuration.yml")
 
-# Call this with the API URL, username, password, account_id and start_date:
-# ruby examples/list_reservations.rb http://api.example.com/v2/ user pass 1234 "2017-07-25T23:02:16+00:00"
-
 # http://api.example.com/v2/
 api_base_URL = configuration['api_base_url']
 
